@@ -24,6 +24,7 @@ public class VariableMutation {
         e *= 8 * 8;
         System.out.println(e);
 
+        //ha függvény if+else
         int f1 = 123;
         int f2 = 345;
         if (f1>f2) {
@@ -31,7 +32,36 @@ public class VariableMutation {
         } else {
             System.out.println("false");
         }
+        int g1 = 350;
+        int g2 = 200;
+        if ((2*g2)>g1) {
+            System.out.println(true);
+        } else {
+            System.out.println(false);
+        }
 
+        //== ->összehasonlítás
+        int h = 135798745;
+        if (h%11==0) {
+            System.out.println(true);
+        } else {
+            System.out.println(false);
+        }
 
+        int i1 = 10;
+        int i2 = 3;
+        //if (i1>i2*i2&(i1<(i2*i2*i2))) hatványozás!!!!
+        if (i1 > Math.pow(i2, 2) && i1 < Math.pow(i2, 3)){
+            System.out.println(true);
+        } else {
+            System.out.println(false);
+        }
+
+        int j= 1521;
+        if (j%3==0||j%5==0) {
+            System.out.println(true);
+        } else {
+            System.out.println(false);
+        }
     }
 }
