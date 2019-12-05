@@ -1,3 +1,5 @@
+package Types;
+
 public class PrintValues {
     public static void main(String[]args) {
         System.out.println("Halihó!");
