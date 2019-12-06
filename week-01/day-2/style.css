@@ -1,0 +1,50 @@
+li{
+    display: inline-block;
+    margin: 5px 20px;
+    text-transform: uppercase;
+}
+
+ul {
+    text-align: right;
+}
+ul a{
+    color: #1ec503 ;
+}
+
+div {
+    padding: 10%;
+ }
+
+h1{
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif ;
+    color: black);
+}
+
+h2{
+    font-size: 35px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #1ec503;
+}
+
+body{
+    background-image: url('/img/topography.png');
+}
+
+.article{
+    font-size: 18px;
+}
+
+nav{
+    background-color: black;
+    background-image: url('/img/unnamed.png');
+    background-position: left;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+
+
+
+
+
