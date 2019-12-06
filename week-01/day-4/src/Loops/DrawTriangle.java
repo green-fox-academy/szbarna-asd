@@ -8,8 +8,8 @@ public class DrawTriangle {
         Scanner sc = new Scanner(System.in);
         int yourNumber = sc.nextInt();
 
-        for (int i = 0; i < yourNumber; i++) {
-            for (int j = 0; j < 5; j++) {
+        for (int i = 0; i <= yourNumber; i++) { //nasty loop. a felső for loop felel a sorok számáért
+            for (int j = 0; j < i; j++) {       //az alsó pedig a sorban lévő csillagok számáért
                 System.out.print("*");
             }
             System.out.println();
