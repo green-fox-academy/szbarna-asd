@@ -14,13 +14,13 @@ public class PartyIndicator {
 
         int numberOfBoys = boys.nextInt();
 
-        if (numberOfBoys == numberOfGirls && (numberOfBoys + numberOfGirls) >20) {
+        if (numberOfBoys == numberOfGirls & (numberOfBoys + numberOfGirls) >= 20) {
             System.out.println("The party is gonna be excellent! ;)");
-        //} else if ((numberOfBoys + numberOfGirls) > 20 && (numberOfBoys != numberOfGirls)) {
+        } else if ((numberOfBoys + numberOfGirls) >=20 && (numberOfBoys != numberOfGirls)) {
             System.out.println("The party is gonna be quite cool! :)");
-        //} else if ((numberOfBoys + numberOfGirls) < 20) {
-            System.out.println("That's gonna be an avarage party... :|");
-        //} else if (numberOfGirls <= 0) {
+        } else if ((numberOfBoys + numberOfGirls) < 20) {
+            System.out.println("That's gonna be an average party... :|");
+        } else if (numberOfGirls <= 0) {
             System.out.println("Oh god! It's gonna be a sausage party... :(");
         }
     }
