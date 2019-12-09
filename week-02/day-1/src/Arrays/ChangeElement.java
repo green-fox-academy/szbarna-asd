@@ -1,3 +1,5 @@
+package Arrays;
+
 public class ChangeElement {
     public static void main(String[] args) {
         // - Create an array variable named `s`

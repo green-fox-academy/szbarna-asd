@@ -1,3 +1,5 @@
+package Arrays;
+
 public class Third {
     public static void main(String[] args) {
         int[] qArray = {4, 5, 6, 7};

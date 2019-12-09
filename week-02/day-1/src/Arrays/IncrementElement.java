@@ -1,3 +1,5 @@
+package Arrays;
+
 public class IncrementElement {
     public static void main(String[] args) {
         /* - Create an array variable named `t`

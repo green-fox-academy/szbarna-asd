@@ -1,3 +1,5 @@
+package Arrays;
+
 public class CompareLenght {
     public static void main(String[] args) {
         // - Create an array variable named `p1`
