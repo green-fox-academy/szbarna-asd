@@ -13,7 +13,5 @@ public class Greet {
         String fullSentence = "Greetings dear, " + (a1);
         System.out.println(fullSentence);
         return fullSentence;
-
-
     }
 }
