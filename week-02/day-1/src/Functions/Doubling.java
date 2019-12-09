@@ -6,9 +6,9 @@ public class Doubling {
         // - Create a function called `doubling` that doubles it's input parameter and returns with an integer
         // - Print the result of `doubling(baseNum)`
         int baseNum = 123; //először megadjuk a váltózkat aztán
-        doubling(baseNum); //új sorban megadjuk milyen methódot fogok hozzá csatolni
+        doubling(baseNum); //új sorban megadjuk milyen funtiont fogok hozzá csatolni
         //int ibolya = 34; //egyszerre több váltózót is megadhatunk
-        //doubling(ibolya); //és ezekhez is csatolhatjuk ugyan azt a metódot
+        //doubling(ibolya); //és ezekhez is csatolhatjuk ugyan azt a functiont
         /*int b = doubling(baseNum);
         System.out.println(b);*/ //itt a példa a return fontosságára, return nélkül a "int b = doubling(baseNum)"-t nem tudnánk shoutolni
 
