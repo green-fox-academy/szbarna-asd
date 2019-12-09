@@ -8,8 +8,8 @@ public class CompareLenght {
             System.out.println("P2 Array is longer than P1");
         } else if (p1Array.length > p2Array.length) {
             System.out.println("P1 Array is longer than P2");
-        } else if (p1Array.length == p2Array.length) {
-            System.out.println("P1 Array is just as long P12");
+        } else {
+            System.out.println("P1 Array is just as long P2");
         }
         //   with the following content: `[1, 2, 3]`
         // - Create an array variable named `p2`
