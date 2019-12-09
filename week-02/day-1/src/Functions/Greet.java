@@ -7,11 +7,10 @@ public class Greet {
         //     - Greeting is printing e.g. `Greetings dear, Green Fox`
         // - Greet `al`
         String a1 = "Green Fox";
-        greet(a1);
+        System.out.println(greet(a1));
     }
     public static String greet(String a1) { /*a metód maga //megadjuk a functiont(a változó fajtája)*/
         String fullSentence = "Greetings dear, " + (a1);
-        System.out.println(fullSentence);
         return fullSentence;
     }
 }
