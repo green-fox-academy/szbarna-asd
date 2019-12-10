@@ -1,15 +1,15 @@
 package Variables;
-
+import java.util.Scanner;
 public class Swap {
     public static void main(String[] args) {
-        // Swap the values of the variables
-        int a = 123;
-        int b = 526;
-        int temp=a;
-         a=b;
-         b=temp;
+        // Write a program that stores 3 sides of a cuboid as variables (doubles)
+        // The program should write the surface area and volume of the cuboid like:
+        //
+        // Surface Area: 600
+        // Volume: 1000
+        Scanner sides = new Scanner (System.in)
 
-        System.out.println(a);
-        System.out.println(b);
+        System.out.println("Please type the a side of a cuboid");
+        input.system
     }
 }
