@@ -32,8 +32,7 @@ public class WritingSingleLine {
     List<String> content = new ArrayList<>();
     String yourName = scanner.nextLine();
     content.add(yourName);
-    Path filePath = Paths.get(
-        "C:/Users/riska/Documents/greenfox/szbarna-asd/week-02/day-3/src/writeFiles/my-file.txt");
+    Path filePath = Paths.get("C:/Users/riska/Documents/greenfox/szbarna-asd/week-02/day-3/src/writeFiles/my-file.txt");
     Files.write(filePath, content);
   }
 }
