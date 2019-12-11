@@ -20,6 +20,7 @@ public class MapIntro1 {
         System.out.println(map.get(99));
 
         map.remove(97);
+
         if (map.containsKey(100)) {
             System.out.println("Map contains 100 ");
         } else {
