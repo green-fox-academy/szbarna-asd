@@ -4,19 +4,27 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class DrawLines {
+public class DrawBox {
   static int WIDTH = 1000;
   static int HEIGHT = 1000;
 
-
   public static void mainDraw(Graphics graphics) {
-    // draw a red horizontal line to the canvas' middle.
-    // draw a green vertical line to the canvas' middle.
-    graphics.setColor(Color.red);
-    graphics.drawLine(0, HEIGHT/2, WIDTH, HEIGHT/2);
-    graphics.setColor(Color.GREEN);
-    graphics.drawLine(WIDTH/2, 0, WIDTH/2, HEIGHT);
-}
+    // Draw a box that has different colored lines on each edge.
+    graphics.setColor(Color.black);
+    graphics.drawLine(WIDTH/4 , HEIGHT/4 , WIDTH/4*3 , HEIGHT/4);
+
+    graphics.setColor(Color.white);
+    graphics.drawLine(WIDTH/4*3 , HEIGHT/4 , WIDTH/4*3 , HEIGHT/4*3);
+
+    graphics.setColor(Color.black);
+    graphics.drawLine(WIDTH/4*3 , HEIGHT/4*3 ,WIDTH/4 , HEIGHT/4*3);
+
+    graphics.setColor(Color.white);
+    graphics.drawLine(WIDTH/4 , HEIGHT/4*3, WIDTH/4 , HEIGHT/4);
+
+
+
+  }
   public static void main(String[] args) {
     JFrame jFrame = new JFrame("Drawing");
     jFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -32,8 +40,10 @@ public class DrawLines {
     @Override
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
-      this.setBackground(Color.WHITE);
+      this.setBackground(Color.gray);
       mainDraw(graphics);
     }
   }
+
+
 }
