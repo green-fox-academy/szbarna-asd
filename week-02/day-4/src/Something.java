@@ -14,7 +14,7 @@ public class Something {
   public static void mainDraw(Graphics graphics) {
     // Draw a box that has different colored lines on each edge.
     //A Oldal
-    double stepping =10;
+    double stepping = 0.1;
     for (int i = 0; i < HEIGHT; i++) {
       graphics.setColor(new Color(randomGenerator(200), randomGenerator(200), randomGenerator(200)));
       graphics.drawLine((WIDTH/8*3)-i, (HEIGHT/8*3)-i , (WIDTH/8*5)+i , (HEIGHT/8*3)-i);
