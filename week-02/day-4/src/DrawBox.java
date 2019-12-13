@@ -7,22 +7,28 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class DrawBox {
   static int WIDTH = 1000;
   static int HEIGHT = 1000;
-  int x = WIDTH;
-  int y = HEIGHT;
+
 
   public static void mainDraw(Graphics graphics) {
     // Draw a box that has different colored lines on each edge.
-    graphics.setColor(Color.black);
-    graphics.drawLine(WIDTH/4 , HEIGHT/4 , WIDTH/4*3 , HEIGHT/4);
+    for (int i = 0; i < HEIGHT/16; i++) {
+      graphics.setColor(Color.black);
+      graphics.drawLine(WIDTH/16*7+i, HEIGHT/16*7+i , WIDTH/16*9+i , HEIGHT/16*7+i);
+    }
+    for (int i = 0; i < WIDTH/16; i++) {
+      graphics.setColor(Color.white);
+      graphics.drawLine(WIDTH/16*9 +i, HEIGHT/16*7+i , WIDTH/16*9 +i, HEIGHT/16*9+i);
+    }
+    for (int i = 0; i < WIDTH/16 ; i++) {
+      graphics.setColor(Color.white);
+      graphics.drawLine(WIDTH/16*7+i , HEIGHT/16*9+i, WIDTH/16*7+i , HEIGHT/16*7+i);
+    }
+    for (int i = 0; i < HEIGHT/16; i++) {
+      graphics.setColor(Color.black);
+      graphics.drawLine(WIDTH/16*9+i , HEIGHT/16*9+i,WIDTH/16*7+i , HEIGHT/16*9+i);
+    }
 
-    graphics.setColor(Color.white);
-    graphics.drawLine(WIDTH/4*3 , HEIGHT/4 , WIDTH/4*3 , HEIGHT/4*3);
 
-    graphics.setColor(Color.black);
-    graphics.drawLine(WIDTH/4*3 , HEIGHT/4*3 ,WIDTH/4 , HEIGHT/4*3);
-
-    graphics.setColor(Color.white);
-    graphics.drawLine(WIDTH/4 , HEIGHT/4*3, WIDTH/4 , HEIGHT/4);
 
 
 

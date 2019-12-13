@@ -17,8 +17,9 @@ public class GoToCenter {
       int x = random.nextInt(HEIGHT);
       int y = random.nextInt(WIDTH);
     }
-    int y;
-    drawLine(graphics, x ,y); 
+    int y = 0;
+    int x = 0;
+    drawLine(graphics, x ,y);
 
 
 
