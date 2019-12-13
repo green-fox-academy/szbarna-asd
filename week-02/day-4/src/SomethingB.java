@@ -4,29 +4,29 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class DrawBoxB {
+public class SomethingB {
   static int WIDTH = 1000;
   static int HEIGHT = 1000;
 
 
   public static void mainDraw(Graphics graphics) {
     // Draw a box that has different colored lines on each edge.
-    //A oldal
-    for (int i = 0; i < HEIGHT/8; i++) {
+    //A Oldal
+    for (int i = 0; i < HEIGHT; i++) {
       graphics.setColor(Color.black);
-      graphics.drawLine(WIDTH/8*3+i, HEIGHT/8*3+i , WIDTH/8*5+i , HEIGHT/8*3+i);
-    }  //B oldal
-    for (int i = 0; i < WIDTH/8; i++) {
+      graphics.drawLine(WIDTH/8*3-i, HEIGHT/8*3-i , WIDTH/8*5-i , HEIGHT/8*3+i);
+    }    //B OLdal
+    for (int i = 0; i < WIDTH; i++) {
       graphics.setColor(Color.white);
-      graphics.drawLine(WIDTH/8*5 +i, HEIGHT/8*3+i , WIDTH/8*5 +i, HEIGHT/8*5+i);
-    }  //D oldal
-    for (int i = 0; i < WIDTH/8 ; i++) {
+      graphics.drawLine(WIDTH/8*5 -i, HEIGHT/8*3+i , WIDTH/8*5 +i, HEIGHT/8*5+i);
+    }   //D Odal
+    for (int i = 0; i < WIDTH ; i++) {
       graphics.setColor(Color.white);
-      graphics.drawLine(WIDTH/8*3+i , HEIGHT/8*5+i, WIDTH/8*3+i , HEIGHT/8*3+i);
-    }  //C oldal
-    for (int i = 0; i < HEIGHT/8; i++) {
+      graphics.drawLine(WIDTH/8*3+i , HEIGHT/8*5-i, WIDTH/8*3-i , HEIGHT/8*3-i);
+    }    //C Oldal
+    for (int i = 0; i < HEIGHT; i++) {
       graphics.setColor(Color.black);
-      graphics.drawLine(WIDTH/8*5+i , HEIGHT/8*5+i,WIDTH/8*3+i , HEIGHT/8*5+i);
+      graphics.drawLine(WIDTH/8*5+i , HEIGHT/8*5+i,WIDTH/8*3+i , HEIGHT/8*5-i);
     }
 
 
@@ -56,3 +56,4 @@ public class DrawBoxB {
 
 
 }
+
