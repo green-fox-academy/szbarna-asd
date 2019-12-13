@@ -8,7 +8,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class CenteredSquare {
 
   public static void mainDraw(Graphics graphics) {
-    double stepping = 2;
+    double stepping = 1;
     for (int i = 0; i < WIDTH/2; i++) {
       graphics.setColor(new Color( randomGenerator(200), randomGenerator(200), randomGenerator(200)));
       graphics.drawOval((WIDTH/4), (HEIGHT/4), 200+i, 200+i);
