@@ -2,7 +2,7 @@ package postIt;
 
 import java.awt.Color;
 
-public class ColoredTextWithBlackground {
+public class ColoredTextWithBackground {
   /*Create a PostIt class that has
       a backgroundColor
       a text on it

@@ -5,7 +5,7 @@ public class Text {
   private String txtBackgroundColor;
   private String text;
 
-  public Text( String text, String txtColor, String txtBackgroundColor) {
+  public Text(String text, String txtColor, String txtBackgroundColor) {
     this.txtColor = txtColor;
     this.txtBackgroundColor = txtBackgroundColor;
     this.text = text;
