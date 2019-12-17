@@ -21,6 +21,6 @@ public class BlogPost {
   /*"Lorem Ipsum" titled by John Doe posted at "2000.05.04."
   Lorem ipsum dolor sit amet.*/
   public void print() {
-    System.out.println(title +" titled by " + nameOfAuthor + "posted at: " + dateOfPublication + "\n" + "   " + text);
+    System.out.println("\"" + title + "\"" + " titled by " + nameOfAuthor + " posted at: " + dateOfPublication + "\n" + "   " + text);
   }
 }
