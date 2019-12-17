@@ -1,4 +1,4 @@
-package Sharpie;
+package sharpie;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package Sharpie;
+package sharpie;
 
 class Sharpie {
   /*Create Sharpie class
