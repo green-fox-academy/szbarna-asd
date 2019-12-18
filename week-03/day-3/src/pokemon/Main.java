@@ -22,9 +22,9 @@ public class Main {
       if (wildPokemon.getType().equals(pokemonOfAsh.get(i).getEffectiveAgainst())) {
         System.out.println(pokemonOfAsh.get(i).getName().toString());*/
     for (int i = 0; i < pokemonOfAsh.size(); i++) {
-      if (wildPokemon.getType().equals(pokemonOfAsh.get(i).getEffectiveAgainst())) {
-        System.out.println(pokemonOfAsh.get(i).getName().toString());
-      }
+      if (wildPokemon.getType().equals(pokemonOfAsh.get(i).getEffectiveAgainst())) { //végig megyünk a pokemonOfAsh listán
+        System.out.println(pokemonOfAsh.get(i).getName().toString());       //egészen addig ameddig találunk egy olyan efectiveAgainst
+      }                                                                           //ami egyenlő a wildpoknak a typjával
     }{
 
     }
