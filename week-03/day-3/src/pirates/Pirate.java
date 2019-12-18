@@ -8,9 +8,9 @@ public class Pirate {
     this.pirate = pirate;
     this.rumCounter = rumCounter;
   }
-  public Pirate(Integer rumCounter) {
+  /*public Pirate(Integer rumCounter) {
     this.rumCounter = 0;
-  }
+  }*/
   public void drinkSomeRum() {
   ++rumCounter;
   }
@@ -18,7 +18,11 @@ public class Pirate {
     if(rumCounter < 4) {
       System.out.println("Pour me anudder!");
     } else {
-      System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin?");
+      System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin?" );
+      passOut(pirate);
     }
+  }
+  public void passOut(String pirate) {
+    System.out.println(pirate + " has fallen asleep...");
   }
 }
