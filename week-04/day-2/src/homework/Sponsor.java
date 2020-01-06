@@ -4,23 +4,34 @@ public class Sponsor {
   private String name;
   private Integer age;
   private String gender;
+  private String company;
+  private Integer hiredStudents;
 
-  public String introduce() {
-    return "Hi, I'm " + this.name + ", a " + this.age + " year old " + this.gender + ".";
+  public void introduce() {
+    System.out.println("Hi, I'm " + this.name + ", a " + this.age + " year old " + this.gender + " who represents " + company + " and hired " + hiredStudents + " students so far.");
   }
 
-  public String getGoal() {
-    return "My goal is: Live for the moment!";
+  public Integer hire() {
+    return ++this.hiredStudents;
+  }
+  public void getGoal() {
+    System.out.println("My goal is: Hire brilliant junior software developers.");
   }
 
-  public String toString() {
-    return this.introduce() + "\n" + this.getGoal();
-  }
-
-  public Sponsor(String name, Integer age, String gender) {
+  public Sponsor(String name, Integer age, String gender, String company, Integer hiredStudents) {
     this.name = name;
     this.age = age;
     this.gender = gender;
+    this.company = company;
+    this.hiredStudents = hiredStudents;
+  }
+
+  public Sponsor() {
+    this.name = "Jane Doe";
+    this.age = 30;
+    this.gender = "female";
+    this.company = "Google";
+    this.hiredStudents = 0;
   }
 
   public String getName() {
@@ -45,5 +56,21 @@ public class Sponsor {
 
   public void setGender(String gender) {
     this.gender = gender;
+  }
+
+  public String getCompany() {
+    return company;
+  }
+
+  public void setCompany(String company) {
+    this.company = company;
+  }
+
+  public Integer getHiredStudents() {
+    return hiredStudents;
+  }
+
+  public void setHiredStudents(Integer hiredStudents) {
+    this.hiredStudents = hiredStudents;
   }
 }

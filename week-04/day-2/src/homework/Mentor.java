@@ -6,16 +6,12 @@ public class Mentor {
   private String gender;
   private String level;
 
-  public String introduce() {
-    return "Hi, I'm " + this.name + ", a " + this.age + " year old " + this.gender + ", " + this.level + " mentor.";
+  public void introduce() {
+    System.out.println("Hi, I'm " + this.name + ", a " + this.age + " year old " + this.gender + ", " + this.level + " mentor.");
   }
 
-  public String getGoal() {
-    return "Educate brilliant junior software developers.";
-  }
-
-  public String toString() {
-    return this.introduce() + "\n" + this.getGoal();
+  public void getGoal() {
+    System.out.println("My goal is: Educate brilliant junior software developers.");
   }
 
   public Mentor(String name, Integer age, String gender, String level) {
@@ -23,6 +19,13 @@ public class Mentor {
     this.age = age;
     this.gender = gender;
     this.level = level;
+  }
+
+  public Mentor() {
+    this.name = "Jane Doe";
+    this.age = 30;
+    this.gender = "female";
+    this.level = "intermediate";
   }
 
   public String getName() {
