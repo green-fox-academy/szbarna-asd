@@ -17,7 +17,7 @@ public class Person {
     return this.introduce() + "\n" + this.getGoal();
   }
 
-  public Person (String name, Integer age, String gender) {
+  public Person(String name, Integer age, String gender) {
     this.name = name;
     this.age = age;
     this.gender = gender;
