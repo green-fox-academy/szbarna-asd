@@ -4,6 +4,7 @@ public class Tree extends Plant {
 
   public Tree(String color) {
     super(color);
+    this.absorptionIndex = 0.4;
   }
 
   @Override
@@ -19,7 +20,7 @@ public class Tree extends Plant {
   @Override
   public void watering(Double waterAmount) {
     if (this.waterLevel < 10) {
-      this.waterLevel += waterAmount * 0.4;
+      this.waterLevel += waterAmount * absorptionIndex;
     }
   }
 
