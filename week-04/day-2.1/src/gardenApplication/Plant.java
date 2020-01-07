@@ -2,8 +2,8 @@ package gardenApplication;
 
 public class Plant {
   protected String color;
-  protected Double waterAmount;
   protected Double waterLevel;
+  protected Double waterAmount;
 
   public Plant(String color) {
     this.color = color;
@@ -12,5 +12,9 @@ public class Plant {
 
   public void watering(Double waterAmount) {
     this.waterAmount += waterAmount;
+    System.out.println("Watering with " + waterAmount);
+  }
+
+  public void getInfo() {
   }
 }
