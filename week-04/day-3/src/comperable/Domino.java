@@ -23,7 +23,8 @@ package comperable;
     }
 
     @Override
-    public int compareTo(Domino o) {
-      return Integer.compare(this.left, o.left);
+    public int compareTo(Domino another) {
+      return Integer.compare(this.left, another.left);
+//      return Integer.compare(this.left, another.left);
     }
   }
