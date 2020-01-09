@@ -1,4 +1,6 @@
-import org.junit.Assert;
+package applesTest;
+
+import apples.AppleMain;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.*;
