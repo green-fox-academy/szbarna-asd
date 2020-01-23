@@ -13,18 +13,24 @@ import java.util.List;
 @Controller
 public class BankOfSimbaController {
     List<BankAccount> bankAccounts = new ArrayList<>();
+    BankAccount simba;
+    BankAccount zebra;
+    BankAccount zordon;
+    BankAccount timon;
+    BankAccount pumba;
 
     public BankOfSimbaController() {
-        bankAccounts.add(new BankAccount("Simba", 2000, AnimalType.LION, CurrencyType.LION));
-        bankAccounts.add(new BankAccount("Zebra",  2000, AnimalType.ZEBRA, CurrencyType.ZEBRA));
-        bankAccounts.add(new BankAccount("Zordon",  4000, AnimalType.LION, CurrencyType.LION));
-        bankAccounts.add(new BankAccount("Timon",  10, AnimalType.MEERKATS, CurrencyType.MEERKATS));
-        bankAccounts.add(new BankAccount("Pumba",  20, AnimalType.WARTHOG, CurrencyType.WARTHOG));
+        bankAccounts.add(simba = new BankAccount("Simba", 2000, AnimalType.LION, CurrencyType.LION));
+        bankAccounts.add(zebra = new BankAccount("Zebra",  2000, AnimalType.ZEBRA, CurrencyType.ZEBRA));
+        bankAccounts.add(zordon = new BankAccount("Zordon",  4000, AnimalType.LION, CurrencyType.LION));
+        bankAccounts.add(timon = new BankAccount("Timon",  10, AnimalType.MEERKATS, CurrencyType.MEERKATS));
+        bankAccounts.add(pumba = new BankAccount("Pumba",  20, AnimalType.WARTHOG, CurrencyType.WARTHOG));
     }
 
     @GetMapping("/show")
     public String accountInformation(Model model) {
-        model.addAttribute("bankAccounts", bankAccounts);
+        model.addAttribute("bankAccount1", simba);
+        model.addAttribute("bankAccount2", zebra);
 
         return "index";
     }
