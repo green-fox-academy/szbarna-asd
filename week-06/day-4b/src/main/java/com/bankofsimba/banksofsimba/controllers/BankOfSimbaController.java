@@ -28,4 +28,13 @@ public class BankOfSimbaController {
 
         return "index";
     }
+
+
+    @GetMapping("/hello")
+    public String hello(Model model) {
+        model.addAttribute("text1", "This is an <em>HTML</em> text. <b>Enjoy yourself!</b>");
+        model.addAttribute("text2", "This is an <em>HTML</em> text. <b>Enjoy yourself!</b>");
+
+        return "ception";
+    }
 }
