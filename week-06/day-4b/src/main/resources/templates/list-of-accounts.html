@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List Of Bank Accounts</title>
+</head>
+<body>
+<h1>List Of Bank Accounts</h1>
+<table>
+    <tr>
+        <td>Name Of Owner:</td>
+        <td> Type Of Owner:</td>
+        <td>Balance & Currency type:</td>
+    </tr>
+    <tr th:each="account : ${bankAccounts}">
+        <td th:text="${account.name}"></td>
+        <td th:text="${account.animalType}"></td>
+        <td th:text="${account.balance}+ ' ' + ${account.currency}"></td>
+    </tr>
+</table>
+</body>
+</html>

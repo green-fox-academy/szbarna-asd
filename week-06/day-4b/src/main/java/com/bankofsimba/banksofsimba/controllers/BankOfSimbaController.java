@@ -15,11 +15,11 @@ public class BankOfSimbaController {
     List<BankAccount> bankAccounts = new ArrayList<>();
 
     public BankOfSimbaController() {
-        BankAccount bankAccount1 = new BankAccount("Simba", 2000, AnimalType.LION, CurrencyType.LION);
-        BankAccount bankAccount2 = new BankAccount("Zebra",  2000, AnimalType.ZEBRA, CurrencyType.ZEBRA);
-
-        bankAccounts.add(bankAccount1);
-        bankAccounts.add(bankAccount2);
+        bankAccounts.add(new BankAccount("Simba", 2000, AnimalType.LION, CurrencyType.LION));
+        bankAccounts.add(new BankAccount("Zebra",  2000, AnimalType.ZEBRA, CurrencyType.ZEBRA));
+        bankAccounts.add(new BankAccount("Zordon",  4000, AnimalType.LION, CurrencyType.LION));
+        bankAccounts.add(new BankAccount("Timon",  10, AnimalType.MEERKATS, CurrencyType.MEERKATS));
+        bankAccounts.add(new BankAccount("Pumba",  20, AnimalType.WARTHOG, CurrencyType.WARTHOG));
     }
 
     @GetMapping("/show")
@@ -36,5 +36,12 @@ public class BankOfSimbaController {
         model.addAttribute("text2", "This is an <em>HTML</em> text. <b>Enjoy yourself!</b>");
 
         return "ception";
+    }
+
+    @GetMapping("/account-list")
+    public String accountList(Model model) {
+        model.addAttribute("bankAccounts", bankAccounts);
+
+        return "list-of-accounts";
     }
 }
