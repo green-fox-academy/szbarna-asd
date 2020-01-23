@@ -5,4 +5,5 @@ public enum CurrencyType {
     ZEBRA,
     MEERKATS,
     WARTHOG,
+    HUMAN
 }

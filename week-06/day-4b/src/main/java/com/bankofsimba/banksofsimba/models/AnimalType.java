@@ -5,4 +5,5 @@ public enum AnimalType {
     ZEBRA,
     MEERKATS,
     WARTHOG,
+    HUMAN
 }

@@ -18,13 +18,15 @@ public class BankOfSimbaController {
     BankAccount zordon;
     BankAccount timon;
     BankAccount pumba;
+    BankAccount barna;
 
     public BankOfSimbaController() {
-        bankAccounts.add(simba = new BankAccount("Simba", 2000, AnimalType.LION, CurrencyType.LION, true));
-        bankAccounts.add(zebra = new BankAccount("Zebra",  2000, AnimalType.ZEBRA, CurrencyType.ZEBRA, false));
-        bankAccounts.add(zordon = new BankAccount("Zordon",  4000, AnimalType.LION, CurrencyType.LION, false));
-        bankAccounts.add(timon = new BankAccount("Timon",  10, AnimalType.MEERKATS, CurrencyType.MEERKATS, true));
-        bankAccounts.add(pumba = new BankAccount("Pumba",  20, AnimalType.WARTHOG, CurrencyType.WARTHOG, true));
+        bankAccounts.add(simba = new BankAccount("Simba", 2000, AnimalType.LION, CurrencyType.LION, true, true));
+        bankAccounts.add(zebra = new BankAccount("Zebra",  2000, AnimalType.ZEBRA, CurrencyType.ZEBRA, false, true));
+        bankAccounts.add(zordon = new BankAccount("Zordon",  4000, AnimalType.LION, CurrencyType.LION, false, false));
+        bankAccounts.add(timon = new BankAccount("Timon",  10, AnimalType.MEERKATS, CurrencyType.MEERKATS, true, true));
+        bankAccounts.add(pumba = new BankAccount("Pumba",  20, AnimalType.WARTHOG, CurrencyType.WARTHOG, true, true));
+        bankAccounts.add(barna = new BankAccount("Barna",  1, AnimalType.HUMAN, CurrencyType.HUMAN, true, false));
     }
 
     @GetMapping("/show")

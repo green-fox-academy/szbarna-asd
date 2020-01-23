@@ -6,6 +6,19 @@ public class BankAccount {
     private AnimalType animalType;
     private CurrencyType currency;
     private boolean isKing;
+    private boolean goodOrBad;
+
+    public boolean isGoodOrBad() {
+        return goodOrBad;
+    }
+
+    public String showGoodOrBad() {
+        return isGoodOrBad() ? "Good One" : "Bad One";
+    }
+
+    public void setGoodOrBad(boolean goodOrBad) {
+        this.goodOrBad = goodOrBad;
+    }
 
     public String getName() {
         return name;
@@ -47,12 +60,13 @@ public class BankAccount {
         this.animalType = animalType;
     }
 
-    public BankAccount(String name, float balance, AnimalType animalType, CurrencyType currencyType, boolean isKing) {
+    public BankAccount(String name, float balance, AnimalType animalType, CurrencyType currencyType, boolean isKing, boolean goodOrBad) {
         this.name = name;
         this.balance = balance;
         this.animalType = animalType;
         this.currency = currencyType;
         this.isKing = isKing;
+        this.goodOrBad = goodOrBad;
     }
 
     public String shinyMaker() {
