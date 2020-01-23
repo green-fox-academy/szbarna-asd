@@ -2,6 +2,11 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <style>
+        .yellow {
+            color: yellow;
+        }
+    </style>
     <title>List Of Bank Accounts</title>
 </head>
 <body>
@@ -10,12 +15,15 @@
     <tr>
         <td>Name Of Owner:</td>
         <td>Index Of Account:</td>
+        <td>Is Owner King?</td>
         <td> Type Of Owner:</td>
         <td>Balance & Currency type:</td>
+
     </tr>
     <tr th:each="account : ${bankAccounts}">
-        <td th:text="${account.name}"></td>
+        <td th:text="${account.name}" th:attr="class=${account.shinyMaker()}"></td>
         <td th:text="${accountStat.index}"></td>
+        <td th:text="${account.king}"></td>
         <td th:text="${account.animalType}"></td>
         <td th:text="${account.balance}+ ' ' + ${account.currency}"></td>
     </tr>

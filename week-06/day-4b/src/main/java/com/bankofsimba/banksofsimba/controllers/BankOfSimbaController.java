@@ -20,11 +20,11 @@ public class BankOfSimbaController {
     BankAccount pumba;
 
     public BankOfSimbaController() {
-        bankAccounts.add(simba = new BankAccount("Simba", 2000, AnimalType.LION, CurrencyType.LION));
-        bankAccounts.add(zebra = new BankAccount("Zebra",  2000, AnimalType.ZEBRA, CurrencyType.ZEBRA));
-        bankAccounts.add(zordon = new BankAccount("Zordon",  4000, AnimalType.LION, CurrencyType.LION));
-        bankAccounts.add(timon = new BankAccount("Timon",  10, AnimalType.MEERKATS, CurrencyType.MEERKATS));
-        bankAccounts.add(pumba = new BankAccount("Pumba",  20, AnimalType.WARTHOG, CurrencyType.WARTHOG));
+        bankAccounts.add(simba = new BankAccount("Simba", 2000, AnimalType.LION, CurrencyType.LION, true));
+        bankAccounts.add(zebra = new BankAccount("Zebra",  2000, AnimalType.ZEBRA, CurrencyType.ZEBRA, false));
+        bankAccounts.add(zordon = new BankAccount("Zordon",  4000, AnimalType.LION, CurrencyType.LION, false));
+        bankAccounts.add(timon = new BankAccount("Timon",  10, AnimalType.MEERKATS, CurrencyType.MEERKATS, true));
+        bankAccounts.add(pumba = new BankAccount("Pumba",  20, AnimalType.WARTHOG, CurrencyType.WARTHOG, true));
     }
 
     @GetMapping("/show")
