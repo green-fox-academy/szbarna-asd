@@ -5,16 +5,17 @@ import java.util.concurrent.atomic.AtomicLong;
 
 public class Greeting {
     private long id;
+    private static AtomicLong atomicLong = new AtomicLong(0);
     private String content;
     private long greetCounter;
-    static AtomicLong atomicLong = new AtomicLong(1);
 
-    public Greeting(long id, String content) {
-        this.greetCounter = id;
-        this.content = content;
+
+    public Greeting(long greetCounter) {
+        this.greetCounter = greetCounter;
+       // this.content = content;
     }
 
-    public long getId() {
+    public long getGreetCounter() {
         greetCounter = atomicLong.incrementAndGet();
         return greetCounter;
 
