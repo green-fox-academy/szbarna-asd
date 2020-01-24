@@ -26,7 +26,8 @@ public class BankOfSimbaController {
         bankAccounts.add(zordon = new BankAccount("Zordon",  4000, AnimalType.LION, CurrencyType.LION, false, false));
         bankAccounts.add(timon = new BankAccount("Timon",  10, AnimalType.MEERKATS, CurrencyType.MEERKATS, true, true));
         bankAccounts.add(pumba = new BankAccount("Pumba",  20, AnimalType.WARTHOG, CurrencyType.WARTHOG, true, true));
-        bankAccounts.add(barna = new BankAccount("Barna",  1, AnimalType.HUMAN, CurrencyType.HUMAN, true, false));
+        bankAccounts.add(barna = new BankAccount("Barna",  1, AnimalType.HUMAN, CurrencyType.HUMAN, true, true));
+        bankAccounts.add(barna = new BankAccount("Karin",  1000000, AnimalType.HUMAN, CurrencyType.HUMAN, true, false));
     }
 
     @GetMapping("/show")
