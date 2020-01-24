@@ -56,5 +56,4 @@ public class ShopItemController {
                 .sorted()
                 .collect(Collectors.toList());
     }
-
 }
