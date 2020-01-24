@@ -1,4 +1,4 @@
-package com.basicwbshop.basicwebshop;
+package com.greenfox.basicwebshop.basicwebshop;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

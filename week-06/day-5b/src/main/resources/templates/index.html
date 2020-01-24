@@ -2,22 +2,27 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>List Of Items</title>
+    <title>Amazon 2.0</title>
 </head>
 <body>
+<h1>Amazon 2.0</h1>
+
+
+
 <h1>List Of Items</h1>
 <table>
     <tr>
-        <td>Name Of Item:</td>
-        <td>Description:</td>
-        <td>Price:</td>
-        <td>Available Amount</td>
+        <td>Name</td>
+        <td>Description</td>
+        <td>Price</td>
+        <td>On Stock</td>
+
     </tr>
-    <tr th:each="item : ${shopItems}">
+    <tr th:each="item : ${itemList}">
         <td th:text="${item.name}"></td>
         <td th:text="${item.description}"></td>
         <td th:text="${item.price}"></td>
-        <td th:text="${item.quantityOfStock}"></td>
+        <td th:text="${item.amount}"></td>
     </tr>
 </table>
 </body>
