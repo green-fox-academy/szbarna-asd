@@ -4,7 +4,6 @@ import com.greenfox.basicwebshop.basicwebshop.Models.ShopItem;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,10 +16,10 @@ public class ShopItemController {
     private ShopItem item3;
 
     public ShopItemController() {
-        shopItemList.add(item1 = new ShopItem("Valami1", "Valamik1", "10000", 1000));
-        shopItemList.add(item2 = new ShopItem("Valami2", "Valamik2", "10000", 0));
-        shopItemList.add(item3 = new ShopItem("Valami3", "Valamik3", "10000", 1000));
-        shopItemList.add(item3 = new ShopItem("Valami4", "Valamik4", "10000", 0));
+        shopItemList.add(item1 = new ShopItem("Valami1", "Valamik1", 10, 1000));
+        shopItemList.add(item2 = new ShopItem("Valami2", "Valamik2", 102, 0));
+        shopItemList.add(item3 = new ShopItem("Valami3", "Valamik3", 1003, 1000));
+        shopItemList.add(item3 = new ShopItem("Valami4", "Valamik4", 1000, 0));
     }
 
     @GetMapping("/webshop")
@@ -37,11 +36,25 @@ public class ShopItemController {
         return "available";
     }
 
+    @GetMapping("/list-by-price")
+    public String listByPrice(Model model) {
+        model.addAttribute("itemList",getListByPrice(shopItemList) );
+
+        return "list-by-price";
+    }
+
     private List<ShopItem> getOnlyAvailable(List<ShopItem> list) {
-        List<ShopItem> available = list
+        return list
                 .stream()
                 .filter(item -> item.getAmount() > 0)
                 .collect(Collectors.toList());
-        return available;
     }
+
+    private List<ShopItem> getListByPrice(List<ShopItem> list) {
+        return list
+                .stream()
+                .sorted()
+                .collect(Collectors.toList());
+    }
+
 }
