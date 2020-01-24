@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 public class ShopItemController {
@@ -16,9 +17,10 @@ public class ShopItemController {
     private ShopItem item3;
 
     public ShopItemController() {
-        shopItemList.add(item1 = new ShopItem("Valami", "Valamik", "10000", 1000));
-        shopItemList.add(item2 = new ShopItem("Valami", "Valamik", "10000", 1000));
-        shopItemList.add(item3 = new ShopItem("Valami", "Valamik", "10000", 1000));
+        shopItemList.add(item1 = new ShopItem("Valami1", "Valamik1", "10000", 1000));
+        shopItemList.add(item2 = new ShopItem("Valami2", "Valamik2", "10000", 0));
+        shopItemList.add(item3 = new ShopItem("Valami3", "Valamik3", "10000", 1000));
+        shopItemList.add(item3 = new ShopItem("Valami4", "Valamik4", "10000", 0));
     }
 
     @GetMapping("/webshop")
@@ -30,14 +32,16 @@ public class ShopItemController {
 
     @GetMapping("/available")
     public String onlyAvailable(Model model) {
-        model.addAttribute("itemList", shopItemList);
+        model.addAttribute("itemList",getOnlyAvailable(shopItemList) );
 
-        return "";
+        return "available";
     }
 
-    /*private String getOnlyAvailable(List<ShopItem> items) {
-        return items
+    private List<ShopItem> getOnlyAvailable(List<ShopItem> list) {
+        List<ShopItem> available = list
                 .stream()
-                .
-    }*/
+                .filter(item -> item.getAmount() > 0)
+                .collect(Collectors.toList());
+        return available;
+    }
 }
