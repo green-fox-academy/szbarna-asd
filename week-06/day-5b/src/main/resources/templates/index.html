@@ -1,31 +1,56 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
+
     <meta charset="UTF-8">
     <title>Amazon 2.0</title>
+
 </head>
+
 <body>
+
 <h1>Amazon 2.0</h1>
+
     <ul><li><a href="/available" >ONLY AVAILABLE</a></li></ul>
     <ul><li><a href="/list-by-price" >CHEAPEST FIRST</a></li></ul>
     <ul><li><a href="/contains-nike" >List Of Nike Items</a></li></ul>
     <ul><li><a href="/average-stock" >AVERAGE STOCK</a></li></ul>
     <ul><li><a href="/most-expensive" >MOST EXPENSIVE AVAILABLE</a></li></ul>
 
+<h2>Search for:</h2>
+
+<form action="/search" method="post">
+
+    <label for="title"></label>
+    <input type="text" id="title" name="title" placeholder="...something like nike">
+
+    <button type="submit">Search</button>
+
+</form>
+
     <h2>List Of Items</h2>
+
     <table>
+
     <tr>
+
         <td>Name</td>
         <td>Description</td>
         <td>Price</td>
         <td>On Stock</td>
+
     </tr>
-    <tr th:each="item : ${itemList}">
+
+        <tr th:each="item : ${itemList}">
         <td th:text="${item.name}"></td>
         <td th:text="${item.description}"></td>
         <td th:text="${item.price}"></td>
         <td th:text="${item.amount}"></td>
-    </tr>
-</table>
+        </tr>
+
+    </table>
+
 </body>
+
 </html>
