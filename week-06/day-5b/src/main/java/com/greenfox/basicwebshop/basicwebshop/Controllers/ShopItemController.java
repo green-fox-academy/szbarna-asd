@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.OptionalDouble;
 import java.util.stream.Collectors;
 
 @Controller
@@ -17,9 +18,9 @@ public class ShopItemController {
 
     public ShopItemController() {
         shopItemList.add(item1 = new ShopItem("Valami1", "Valamik1", 10, 1000));
-        shopItemList.add(item2 = new ShopItem("Valami2", "Valamik2", 102, 0));
+        shopItemList.add(item2 = new ShopItem("Valami2", "Valamik2nike", 102, 0));
         shopItemList.add(item3 = new ShopItem("Valami3", "Valamik3", 1003, 1000));
-        shopItemList.add(item3 = new ShopItem("Valami4", "Valamik4", 1000, 0));
+        shopItemList.add(item3 = new ShopItem("Valami4", "Valamik4 nike", 1000, 0));
     }
 
     @GetMapping("/webshop")
@@ -43,6 +44,20 @@ public class ShopItemController {
         return "list-by-price";
     }
 
+    @GetMapping("/contains-nike")
+    public String nikeList(Model model) {
+        model.addAttribute("itemList", containsNike(shopItemList) );
+
+        return "contains-nike";
+    }
+
+    @GetMapping("/average-stock")
+    public String averageStock(Model model) {
+        model.addAttribute("itemList", getAverageStock(shopItemList) );
+
+        return "average";
+    }
+
     private List<ShopItem> getOnlyAvailable(List<ShopItem> list) {
         return list
                 .stream()
@@ -55,5 +70,18 @@ public class ShopItemController {
                 .stream()
                 .sorted()
                 .collect(Collectors.toList());
+    }
+
+    private List<ShopItem> containsNike(List<ShopItem> list) {
+        return list.stream()
+                .filter(item -> item.getAllDetails().contains("nike"))
+                .collect(Collectors.toList());
+    }
+    private double getAverageStock(List<ShopItem> list) {
+
+        return list.stream()
+                .mapToLong(ShopItem::getAmount)
+                .average()
+                .getAsDouble();
     }
 }

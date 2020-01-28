@@ -2,23 +2,17 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Amazon 2.0</title>
+    <title>Nike</title>
 </head>
 <body>
-<h1>Amazon 2.0</h1>
-    <ul><li><a href="/available" >ONLY AVAILABLE</a></li></ul>
-    <ul><li><a href="/list-by-price" >CHEAPEST FIRST</a></li></ul>
-    <ul><li><a href="/contains-nike" >List Of Nike Items</a></li></ul>
-   <!-- <ul><li><a href="/available" >AVERAGE STOCK</a></li></ul>
-    <ul><li><a href="/available" >MOST EXPENSIVE AVAILABLE</a></li></ul>-->
-
-    <h2>List Of Items</h2>
-    <table>
+<h1>List Of Nike Items</h1>
+<table>
     <tr>
         <td>Name</td>
         <td>Description</td>
         <td>Price</td>
         <td>On Stock</td>
+
     </tr>
     <tr th:each="item : ${itemList}">
         <td th:text="${item.name}"></td>

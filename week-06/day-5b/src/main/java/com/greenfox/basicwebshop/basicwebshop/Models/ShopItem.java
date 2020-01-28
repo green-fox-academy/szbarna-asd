@@ -1,10 +1,13 @@
 package com.greenfox.basicwebshop.basicwebshop.Models;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class ShopItem implements Comparable<ShopItem>{
-    public String name;
-    public String description;
-    public Integer price;
-    public Integer amount;
+    private String name;
+    private String description;
+    private Integer price;
+    private Integer amount;
 
     public String getName() {
         return name;
@@ -48,5 +51,9 @@ public class ShopItem implements Comparable<ShopItem>{
     @Override
     public int compareTo(ShopItem o) {
         return this.price.compareTo(o.price);
+    }
+
+    public String getAllDetails() {
+        return getName() + getDescription();
     }
 }
