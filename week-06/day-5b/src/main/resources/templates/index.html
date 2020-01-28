@@ -22,14 +22,14 @@
 
 <form action="/search" method="post">
 
-    <label for="title"></label>
-    <input type="text" id="title" name="title" placeholder="...something like nike">
+    <label for="expression"></label>
+    <input type="text" id="expression" name="expression" placeholder="...something like nike">
 
     <button type="submit">Search</button>
 
 </form>
 
-    <h2>List Of Items</h2>
+    <h2 th:text="'List Of ' + ${text}"></h2>
 
     <table>
 

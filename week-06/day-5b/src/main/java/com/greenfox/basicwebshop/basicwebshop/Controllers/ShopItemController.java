@@ -4,6 +4,8 @@ import com.greenfox.basicwebshop.basicwebshop.Models.ShopItem;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -13,20 +15,18 @@ import java.util.stream.Collectors;
 @Controller
 public class ShopItemController {
     private List<ShopItem> shopItemList = new ArrayList<>();
-    private ShopItem item1;
-    private ShopItem item2;
-    private ShopItem item3;
 
     public ShopItemController() {
-        shopItemList.add(item1 = new ShopItem("Valami1", "Valamik1", 10, 1000));
-        shopItemList.add(item2 = new ShopItem("Valami2", "Valamik2nike", 102, 0));
-        shopItemList.add(item3 = new ShopItem("Valami3", "Valamik3", 1003, 1000));
-        shopItemList.add(item3 = new ShopItem("Valami4", "Valamik4 nike", 1003, 0));
+        shopItemList.add(new ShopItem("Valami1", "Valamik1", 10, 1000));
+        shopItemList.add(new ShopItem("Valami2", "Valamik2nike", 102, 0));
+        shopItemList.add(new ShopItem("Valami3", "Valamik3", 1003, 1000));
+        shopItemList.add(new ShopItem("Valami4", "Valamik4 nike", 1003, 0));
     }
 
     @GetMapping("/webshop")
     public String accountList(Model model) {
         model.addAttribute("itemList", shopItemList);
+        model.addAttribute("text", "Items");
 
         return "index";
     }
@@ -34,36 +34,48 @@ public class ShopItemController {
     @GetMapping("/available")
     public String onlyAvailable(Model model) {
         model.addAttribute("itemList",getOnlyAvailable(shopItemList) );
+        model.addAttribute("text", "Available Items");
 
-        return "available";
+        return "index";
     }
 
     @GetMapping("/list-by-price")
     public String listByPrice(Model model) {
-        model.addAttribute("itemList",getListByPrice(shopItemList) );
+        model.addAttribute("itemList",getListByPrice(shopItemList));
+        model.addAttribute("text", "Sorted Items");
 
-        return "list-by-price";
+        return "index";
     }
 
     @GetMapping("/contains-nike")
     public String nikeList(Model model) {
-        model.addAttribute("itemList", containsNike(shopItemList) );
+        model.addAttribute("itemList", containsNike(shopItemList));
+        model.addAttribute("text", "Items Contains Nike");
 
-        return "contains-nike";
+        return "index";
     }
 
     @GetMapping("/average-stock")
     public String averageStock(Model model) {
-        model.addAttribute("itemList", getAverageStock(shopItemList) );
+        model.addAttribute("average", getAverageStock(shopItemList) );
 
         return "average";
     }
 
     @GetMapping("/most-expensive")
     public String mostExpensive(Model model) {
-        model.addAttribute("itemList", getMostExpensive(shopItemList) );
+        model.addAttribute("itemList", getMostExpensive(shopItemList));
+        model.addAttribute("text", "Most expensive Item");
 
-        return "most-expensive";
+        return "index";
+    }
+
+    @PostMapping("/search")
+    public String searchForItem(Model model, String expression) {
+        model.addAttribute("itemList",searchForItem(shopItemList, expression));
+        model.addAttribute("text", "Items Contains Nike");
+
+        return "index";
     }
 
     private List<ShopItem> getOnlyAvailable(List<ShopItem> list) {
@@ -89,13 +101,24 @@ public class ShopItemController {
         return list.stream()
                 .mapToLong(ShopItem::getAmount)
                 .average()
-                .getAsDouble();
+                .orElse(0);
     }
-    private Optional<ShopItem> getMostExpensive(List<ShopItem> list) {
-
-        return list.stream()
+    private List<ShopItem> getMostExpensive(List<ShopItem> list) {
+        List<ShopItem> mostExpensive = new ArrayList<>();
+        Optional<ShopItem> optionalShopItem = list.stream()
                 .filter(item -> item.getAmount() > 0)
                 .max(Comparator.comparing(ShopItem::getPrice));
+        optionalShopItem.ifPresent(mostExpensive::add);
+        return mostExpensive;
     }
+    private List<ShopItem> searchForItem(List<ShopItem> list, String expressionToLookFor) {
+
+        return list.stream()
+                .filter(item -> item.getNameAndDescription().contains(expressionToLookFor))
+                .collect(Collectors.toList());
+
+    }
+
+
 }
 
