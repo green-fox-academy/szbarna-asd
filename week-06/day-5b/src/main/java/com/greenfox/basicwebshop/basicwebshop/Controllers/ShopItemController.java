@@ -94,6 +94,8 @@ public class ShopItemController {
     private Optional<ShopItem> getMostExpensive(List<ShopItem> list) {
 
         return list.stream()
-                 .max(Comparator.comparing(ShopItem::getPrice));
+                .filter(item -> item.getAmount() > 0)
+                .max(Comparator.comparing(ShopItem::getPrice));
     }
 }
+
