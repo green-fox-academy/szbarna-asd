@@ -5,8 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
-import java.util.OptionalDouble;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Controller
@@ -20,7 +21,7 @@ public class ShopItemController {
         shopItemList.add(item1 = new ShopItem("Valami1", "Valamik1", 10, 1000));
         shopItemList.add(item2 = new ShopItem("Valami2", "Valamik2nike", 102, 0));
         shopItemList.add(item3 = new ShopItem("Valami3", "Valamik3", 1003, 1000));
-        shopItemList.add(item3 = new ShopItem("Valami4", "Valamik4 nike", 1000, 0));
+        shopItemList.add(item3 = new ShopItem("Valami4", "Valamik4 nike", 1003, 0));
     }
 
     @GetMapping("/webshop")
@@ -58,6 +59,13 @@ public class ShopItemController {
         return "average";
     }
 
+    @GetMapping("/most-expensive")
+    public String mostExpensive(Model model) {
+        model.addAttribute("itemList", getMostExpensive(shopItemList) );
+
+        return "most-expensive";
+    }
+
     private List<ShopItem> getOnlyAvailable(List<ShopItem> list) {
         return list
                 .stream()
@@ -74,14 +82,18 @@ public class ShopItemController {
 
     private List<ShopItem> containsNike(List<ShopItem> list) {
         return list.stream()
-                .filter(item -> item.getAllDetails().contains("nike"))
+                .filter(item -> item.getNameAndDescription().contains("nike"))
                 .collect(Collectors.toList());
     }
     private double getAverageStock(List<ShopItem> list) {
-
         return list.stream()
                 .mapToLong(ShopItem::getAmount)
                 .average()
                 .getAsDouble();
+    }
+    private Optional<ShopItem> getMostExpensive(List<ShopItem> list) {
+
+        return list.stream()
+                 .max(Comparator.comparing(ShopItem::getPrice));
     }
 }

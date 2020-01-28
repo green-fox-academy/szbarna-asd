@@ -53,7 +53,7 @@ public class ShopItem implements Comparable<ShopItem>{
         return this.price.compareTo(o.price);
     }
 
-    public String getAllDetails() {
+    public String getNameAndDescription() {
         return getName() + getDescription();
     }
 }
