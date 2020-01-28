@@ -1,5 +1,6 @@
 package com.greenfox.basicwebshop.basicwebshop.Controllers;
 
+import com.greenfox.basicwebshop.basicwebshop.Models.ProductType;
 import com.greenfox.basicwebshop.basicwebshop.Models.ShopItem;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,10 +18,10 @@ public class ShopItemController {
     private List<ShopItem> shopItemList = new ArrayList<>();
 
     public ShopItemController() {
-        shopItemList.add(new ShopItem("Valami1", "Valamik1", 10, 1000));
-        shopItemList.add(new ShopItem("Valami2", "Valamik2nike", 102, 0));
-        shopItemList.add(new ShopItem("Valami3", "Valamik3", 1003, 1000));
-        shopItemList.add(new ShopItem("Valami4", "Valamik4 nike", 1003, 0));
+        shopItemList.add(new ShopItem("Valami1", "Valamik1", 10, 1000, ProductType.ELECTRONIC));
+        shopItemList.add(new ShopItem("Valami2", "Valamik2nike", 102, 0, ProductType.FOOD));
+        shopItemList.add(new ShopItem("Valami3", "Valamik3", 1003, 1000, ProductType.WEAR));
+        shopItemList.add(new ShopItem("Valami4", "Valamik4 nike", 1003, 0, ProductType.FOOD));
     }
 
     @GetMapping("/webshop")
@@ -33,8 +34,8 @@ public class ShopItemController {
 
     @GetMapping("/available")
     public String onlyAvailable(Model model) {
-        model.addAttribute("itemList",getOnlyAvailable(shopItemList) );
-        model.addAttribute("text", "Available Items");
+        model.addAttribute("itemList",getOnlyAvailable(shopItemList));
+        model.addAttribute("text", "List Of Available Item(s)");
 
         return "index";
     }
@@ -42,7 +43,7 @@ public class ShopItemController {
     @GetMapping("/list-by-price")
     public String listByPrice(Model model) {
         model.addAttribute("itemList",getListByPrice(shopItemList));
-        model.addAttribute("text", "Sorted Items");
+        model.addAttribute("text", "List Of Item(s) By Price");
 
         return "index";
     }
@@ -50,14 +51,14 @@ public class ShopItemController {
     @GetMapping("/contains-nike")
     public String nikeList(Model model) {
         model.addAttribute("itemList", containsNike(shopItemList));
-        model.addAttribute("text", "Items Contains Nike");
+        model.addAttribute("text", "List Of Nike Item(s)");
 
         return "index";
     }
 
     @GetMapping("/average-stock")
     public String averageStock(Model model) {
-        model.addAttribute("average", getAverageStock(shopItemList) );
+        model.addAttribute("average", getAverageStock(shopItemList));
 
         return "average";
     }
@@ -65,7 +66,7 @@ public class ShopItemController {
     @GetMapping("/most-expensive")
     public String mostExpensive(Model model) {
         model.addAttribute("itemList", getMostExpensive(shopItemList));
-        model.addAttribute("text", "Most expensive Item");
+        model.addAttribute("text", "List Of Most Expensive Item(s)");
 
         return "index";
     }
@@ -73,7 +74,7 @@ public class ShopItemController {
     @PostMapping("/search")
     public String searchForItem(Model model, String expression) {
         model.addAttribute("itemList",searchForItem(shopItemList, expression));
-        model.addAttribute("text", "Items Contains Nike");
+        model.addAttribute("text", "List Of Searched Item(s)");
 
         return "index";
     }

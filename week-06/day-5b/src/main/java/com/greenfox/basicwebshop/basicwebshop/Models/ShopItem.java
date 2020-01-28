@@ -1,51 +1,38 @@
 package com.greenfox.basicwebshop.basicwebshop.Models;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class ShopItem implements Comparable<ShopItem>{
-    private String name;
-    private String description;
+    private java.lang.String name;
+    private java.lang.String description;
     private Integer price;
     private Integer amount;
+    private ProductType type;
 
-    public String getName() {
+    public ProductType getType() {
+        return type;
+    }
+
+    public java.lang.String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
+    public java.lang.String getDescription() {
         return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
-        this.price = price;
-    }
-
     public Integer getAmount() {
         return amount;
     }
 
-    public void setAmount(Integer amount) {
-        this.amount = amount;
-    }
-
-    public ShopItem(String name, String description, Integer price, Integer amount) {
+    public ShopItem(java.lang.String name, java.lang.String description, Integer price, Integer amount, ProductType type) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.amount = amount;
+        this.type = type;
     }
 
     @Override
@@ -53,7 +40,7 @@ public class ShopItem implements Comparable<ShopItem>{
         return this.price.compareTo(o.price);
     }
 
-    public String getNameAndDescription() {
+    public java.lang.String getNameAndDescription() {
         return getName() + getDescription();
     }
 }
