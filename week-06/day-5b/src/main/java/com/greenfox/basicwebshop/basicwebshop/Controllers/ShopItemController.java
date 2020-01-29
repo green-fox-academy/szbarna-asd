@@ -18,10 +18,10 @@ public class ShopItemController {
     private List<ShopItem> shopItemList = new ArrayList<>();
 
     public ShopItemController() {
-        shopItemList.add(new ShopItem("Valami1", "Valamik1", 10, 1000, ProductType.ELECTRONIC));
-        shopItemList.add(new ShopItem("Valami2", "Valamik2nike", 102, 0, ProductType.FOOD));
-        shopItemList.add(new ShopItem("Valami3", "Valamik3", 1003, 1000, ProductType.WEAR));
-        shopItemList.add(new ShopItem("Valami4", "Valamik4 nike", 1003, 0, ProductType.FOOD));
+        shopItemList.add(new ShopItem("Vibrator", "Electronic vibrator for men", 10000, 99, ProductType.ELECTRONIC));
+        shopItemList.add(new ShopItem("Milka", "Milk chocolate variation", 200, 1000, ProductType.FOOD));
+        shopItemList.add(new ShopItem("Skirt", "Prada, quality skirt for ladies", 30000, 0, ProductType.WEAR));
+        shopItemList.add(new ShopItem("ChocoPenis", "Eatable chocolate penis. UNISEX", 1000, 31, ProductType.FOOD));
     }
 
     @GetMapping("/webshop")
