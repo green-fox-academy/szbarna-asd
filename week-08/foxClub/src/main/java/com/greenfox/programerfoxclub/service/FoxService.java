@@ -7,9 +7,15 @@ import java.util.List;
 
 @Service
 public interface FoxService {
-    public void addFox(String name);
+    void addFox(String name);
 
     List<Fox> foxList();
 
-    public String showInfo(Fox fox);
+    String showInfo(Fox fox);
+
+    Fox findFoxByName(String name);
+
+    boolean isFoxPresent(String name);
+
+    void changeFox(Fox fox);
 }

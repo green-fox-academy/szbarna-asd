@@ -6,7 +6,8 @@
 </head>
 <body>
 <a href="">Information</a>
-<img src="week-08/foxClub/fox.png">
+<img src="fox.png">
+<p th:text="|This is Mr. ${fox.name}. He likes to eat ${fox.getFood()} and likes to drink ${fox.drink}. Knows ${fox.getTrickList().size()} tricks|"></p>
 
 <h1>Known Tricks</h1>
 <ul>
