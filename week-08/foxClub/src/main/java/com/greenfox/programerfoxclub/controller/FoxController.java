@@ -1,5 +1,6 @@
 package com.greenfox.programerfoxclub.controller;
 
+import com.greenfox.programerfoxclub.model.Beverage;
 import com.greenfox.programerfoxclub.model.Fox;
 import com.greenfox.programerfoxclub.service.FoxService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,15 +40,15 @@ public class FoxController {
         return "redirect:/?name="+name2;
     }
 
-    @GetMapping("/nutrition-store")
+   /* @GetMapping("/nutrition-store")
     public String getNutritionStore(@RequestParam(value = "name") String name, Model model){
         model.addAttribute("name", name);
         return "nutrition-store";
-    }
+    }*/
 
-    @PostMapping("/nutrition-store")
+    /*@PostMapping("/nutrition-store")
     public String changeDrinkAndFood(@ModelAttribute Fox fox){
         foxService.changeFox(fox);
         return "redirect:/?name=" +fox.getName();
-    }
+    }*/
 }

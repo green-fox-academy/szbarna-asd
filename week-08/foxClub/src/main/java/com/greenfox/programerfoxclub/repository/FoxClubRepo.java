@@ -30,9 +30,7 @@ public class FoxClubRepo {
     public boolean isFoxPresent(String name) {
         return foxList
                 .stream()
-                .filter(fox -> fox.getName().equals(name))
-                .findAny()
-                .isPresent();
+                .anyMatch(fox -> fox.getName().equals(name));
     }
 
     public void changeFox(Fox fox) {

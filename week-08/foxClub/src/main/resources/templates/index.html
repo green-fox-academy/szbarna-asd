@@ -5,13 +5,16 @@
     <title>Fox Club</title>
 </head>
 <body>
-<a href="">Information</a>
+<div><a href="">Information</a></div>
 <img src="fox.png">
-<p th:text="|This is Mr. ${fox.name}. He likes to eat ${fox.getFood()} and likes to drink ${fox.drink}. Knows ${fox.getTrickList().size()} tricks|"></p>
+<p th:text="|This is Mr. ${fox.name}. He likes to eat ${fox.getFood()} and likes to drink ${fox.drink}. Knows ${fox.getTrickList().size()} tricks.|"></p>
 
 <h1>Known Tricks</h1>
-<ul>
-
-</ul>
+<div>
+    <p th:if="${fox.trickList.size()==0}" th:text="${fox.name} + ' doesnt know any tricks!'"> </p>
+    <ul th:unless="${fox.trickList.size() != 0}" th:each="trick:${fox.trickList}">
+        <li th:text="${trick}"></li>
+    </ul>
+</div>
 </body>
 </html>
