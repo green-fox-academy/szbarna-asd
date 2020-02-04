@@ -1,5 +1,7 @@
 package com.greenfox.listingtodos.domains;
 
+import org.springframework.stereotype.Service;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,8 +9,9 @@ import javax.persistence.Id;
 
 @Entity
 public class Todo {
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String title;
     private boolean urgent;
@@ -17,11 +20,15 @@ public class Todo {
     public Todo() {
     }
 
+    public Todo(String title) {
+        this.title = title;
+    }
+
     public Todo(Long id, String title, boolean urgent, boolean done) {
         this.id = id;
         this.title = title;
-        this.urgent = false;
-        this.done = false;
+        this.urgent = urgent;
+        this.done = done;
     }
 
     public long getId() {

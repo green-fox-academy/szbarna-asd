@@ -16,23 +16,22 @@ import java.util.List;
 @Controller
 @RequestMapping("/todo")
 public class TodoController {
-    TodoService todoService;
+       TodoRepository todoRepository;
 
     @Autowired
-    public TodoController(TodoService todoService) {
-        this.todoService = todoService;
+    public TodoController(TodoRepository todoRepository) {
+        this.todoRepository = todoRepository;
     }
 
     @GetMapping({"/", "/list"})
     public String list(Model model) {
-        List<Todo> todoList = todoService.getToDos();
-        model.addAttribute("todolist", todoList);
+        model.addAttribute("todolist", todoRepository.findAll());
         return "todolist";
     }
 
     @PostMapping("/add")
     @ResponseBody
     public void addToDo(Todo todo){
-        todoService.addToDo(todo);
+        todoRepository.save(todo);
     }
 }
