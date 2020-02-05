@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface TodoRepo extends CrudRepository<Todo, Long> {
-    Todo findByTitle(String searchContent);
+    Todo findByTitleContains(String searchContent);
 }

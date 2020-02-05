@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignees</title>
+</head>
+<body>
+<h1>List Of Assignees:</h1>
+<ul th:each="assignee: ${assignees}">
+    <li th:text="${assignee.getName()} +'-'+ ${assignee.getEmail()}"></li>
+</ul>
+<form action="/todo/delete-assignee" method="post">
+    <label for="name">Delete Assignee By Name:</label>
+    <input type="text" id="name" name="name">
+    <button type="submit">Delete</button>
+</form>
+<form action="/todo/add-assignee" method="post">
+    <label for="title">Add Assignee:</label>
+    <input type="text" id="title" name="title">
+    <button type="submit">Add</button>
+</form>
+</body>
+</html>

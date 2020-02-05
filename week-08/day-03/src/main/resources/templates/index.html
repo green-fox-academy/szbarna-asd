@@ -14,5 +14,6 @@
 <ul th:each="todo: ${todolist}">
     <li th:text="${todo.getTitle()} + '-' + ${todo.isUrgent()}+ '-' + ${todo.isDone()}"></li>
 </ul>
+<p><a href="/todo/assignee-list" >List Of Assignees</a></p>
 </body>
 </html>
