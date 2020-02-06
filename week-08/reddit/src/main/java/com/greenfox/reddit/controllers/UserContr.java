@@ -25,6 +25,6 @@ public class UserContr {
     @PostMapping("/login")
     public String login2(@RequestParam(value = "name",required = false) String name) {
         userService.addUser(name);
-        return "redirect:/posts";
+        return "redirect:/posts?name=" + name;
     }
 }

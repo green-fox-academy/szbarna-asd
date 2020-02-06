@@ -10,10 +10,14 @@ public class User {
     private int id;
     private String name;
 
-    @OneToMany
+    @OneToMany(mappedBy = "user")
     private List<Post> posts;
 
     public User() {
+    }
+
+    public User(String name) {
+        this.name = name;
     }
 
     public int getId() {
@@ -38,9 +42,5 @@ public class User {
 
     public void setPosts(List<Post> posts) {
         this.posts = posts;
-    }
-
-    public User(String name) {
-        this.name = name;
     }
 }
