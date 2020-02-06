@@ -8,11 +8,11 @@
 <a href="url">Submit new post</a>
 <h1>Trending Posts</h1>
 <table>
-    <tr th:each="">
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+    <tr th:each="post : ${posts}" th:object="${post}">
+        <td th:text="*{likeCounter}"></td>
+        <td>+</td>
+        <td>-</td>
+        <td th:text="*{title}"></td>
     </tr>
 </table>
 </body>
