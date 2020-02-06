@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -24,8 +25,11 @@ public class RedditCont {
         return "index";
     }
 
-   /* @GetMapping("/change-counter")
-    public String changeCounter(Model model)*/
+    @GetMapping("/change/{id}/{number}")
+    public String changeCounter(@PathVariable Long id, @PathVariable("number") int number){
+        redditService.change(id, number);
+        return "redirect:/";
+    }
 
    @GetMapping("/add-post")
     public String postMaker() {

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class RedditServiceImpl implements RedditService{
@@ -17,17 +18,21 @@ public class RedditServiceImpl implements RedditService{
     }
 
     @Override
-    public List<Post> findAll() {
-        return (List<Post>) redditRepo.findAll();
-    }
-
-    @Override
     public void save(Post post) {
         redditRepo.save(post);
     }
 
     @Override
     public List<Post> findAllOrderByLikeCounterDesc() {
-        return (List<Post>) redditRepo.findAllOrderByLikeCounterDesc();
+        return redditRepo.findAllOrderByLikeCounterDesc();
+    }
+
+    @Override
+    public void change(Long id, int number) {
+        Optional<Post> postToChange = redditRepo.findById(id);
+        if (postToChange.isPresent()){
+            postToChange.get().setLikeCounter(number);
+            redditRepo.save(postToChange.get());
+        }
     }
 }

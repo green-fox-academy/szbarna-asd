@@ -1,8 +1,7 @@
 package com.greenfox.reddit.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class Post {
@@ -12,6 +11,8 @@ public class Post {
     String title;
     String url;
     int likeCounter;
+    @Temporal(TemporalType.DATE)
+    Date date;
 
     public Post() {
     }
@@ -20,6 +21,7 @@ public class Post {
         this.title = title;
         this.url = url;
         this.likeCounter = 0;
+        this.date = new Date();
     }
 
     public long getId() {
@@ -50,7 +52,15 @@ public class Post {
         return likeCounter;
     }
 
-    public void setLikeCounter(int likeCounter) {
-        this.likeCounter = likeCounter;
+    public void setLikeCounter(int n) {
+        this.likeCounter += n;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 }

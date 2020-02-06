@@ -7,10 +7,9 @@ import java.util.List;
 
 @Service
 public interface RedditService {
-
-    List<Post> findAll();
-
     void save(Post post);
 
     List<Post> findAllOrderByLikeCounterDesc();
+
+    void change(Long id, int number);
 }
