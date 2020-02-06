@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public class RedditCont {
+public class RedditContr {
     private RedditService redditService;
 
     @Autowired
-    public RedditCont(RedditService redditService) {
+    public RedditContr(RedditService redditService) {
         this.redditService = redditService;
     }
 
