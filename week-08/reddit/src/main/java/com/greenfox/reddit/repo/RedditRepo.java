@@ -11,7 +11,8 @@ import java.util.List;
 @Repository
 public interface RedditRepo extends CrudRepository<Post, Long> {
     @Query(value = "select * from post order by like_counter desc limit 10", nativeQuery = true)
-    List<Post> findAllOrderByLikeCounterDesc();
+    List<Post> findAllOrderByLikeCounterDescFirstTen();
 
-    //Post findById(Long id);
+    @Query(value = "select * from post order by like_counter desc limit 10,10", nativeQuery = true)
+    List<Post> findAllOrderByLikeCounterDescSecondTen();
 }

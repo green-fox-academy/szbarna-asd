@@ -14,6 +14,9 @@ public class Post {
     @Temporal(TemporalType.DATE)
     Date date;
 
+    @ManyToOne
+    private User user;
+
     public Post() {
     }
 

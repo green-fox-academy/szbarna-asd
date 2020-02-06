@@ -23,8 +23,8 @@ public class RedditServiceImpl implements RedditService{
     }
 
     @Override
-    public List<Post> findAllOrderByLikeCounterDesc() {
-        return redditRepo.findAllOrderByLikeCounterDesc();
+    public List<Post> findAllOrderByLikeCounterDescFirstTen() {
+        return redditRepo.findAllOrderByLikeCounterDescFirstTen();
     }
 
     @Override
@@ -34,5 +34,10 @@ public class RedditServiceImpl implements RedditService{
             postToChange.get().setLikeCounter(number);
             redditRepo.save(postToChange.get());
         }
+    }
+
+    @Override
+    public List<Post> findAllOrderByLikeCounterDescSecondTen() {
+        return redditRepo.findAllOrderByLikeCounterDescSecondTen();
     }
 }

@@ -19,16 +19,22 @@ public class RedditCont {
         this.redditService = redditService;
     }
 
-    @GetMapping({"/", "/posts"})
+    @GetMapping("/posts")
     public String listOfPosts(Model model) {
-        model.addAttribute("posts", redditService.findAllOrderByLikeCounterDesc());
+        model.addAttribute("posts", redditService.findAllOrderByLikeCounterDescFirstTen());
+        return "index";
+    }
+
+    @GetMapping("/post/2")
+    public String listOfPosts2(Model model) {
+        model.addAttribute("posts", redditService.findAllOrderByLikeCounterDescSecondTen());
         return "index";
     }
 
     @GetMapping("/change/{id}/{number}")
     public String changeCounter(@PathVariable Long id, @PathVariable("number") int number){
         redditService.change(id, number);
-        return "redirect:/";
+        return "redirect:/posts";
     }
 
    @GetMapping("/add-post")
@@ -39,7 +45,7 @@ public class RedditCont {
    @PostMapping("/add-post")
     public String addPost(@ModelAttribute Post post) {
        redditService.save(post);
-       return "redirect:/";
+       return "redirect:/posts";
    }
 
 }

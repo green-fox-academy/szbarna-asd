@@ -9,7 +9,9 @@ import java.util.List;
 public interface RedditService {
     void save(Post post);
 
-    List<Post> findAllOrderByLikeCounterDesc();
+    List<Post> findAllOrderByLikeCounterDescFirstTen();
 
     void change(Long id, int number);
+
+    List<Post> findAllOrderByLikeCounterDescSecondTen();
 }
