@@ -9,4 +9,6 @@ import java.util.List;
 public interface RedditService {
 
     List<Post> findAll();
+
+    void save(Post post);
 }

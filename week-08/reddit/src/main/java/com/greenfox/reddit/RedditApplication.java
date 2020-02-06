@@ -23,8 +23,8 @@ public class RedditApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        redditRepo.save(new Post("Asd", "asdadfasd.hu"));
-        redditRepo.save(new Post("Asd2", "asdadfasd2.hu"));
-        redditRepo.save(new Post("Asd3", "asdadfasd3.hu"));
+        redditRepo.save(new Post("Index", "https://index.hu"));
+        redditRepo.save(new Post("HVG", "https://hvg.hu"));
+        redditRepo.save(new Post("444", "https://444.hu"));
     }
 }

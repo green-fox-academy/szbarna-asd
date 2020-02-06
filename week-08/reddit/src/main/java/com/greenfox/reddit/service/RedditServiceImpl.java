@@ -20,4 +20,9 @@ public class RedditServiceImpl implements RedditService{
     public List<Post> findAll() {
         return (List<Post>) redditRepo.findAll();
     }
+
+    @Override
+    public void save(Post post) {
+        redditRepo.save(post);
+    }
 }

@@ -6,9 +6,12 @@
 </head>
 <body>
 <h1>Submit a new post</h1>
-<form action="", method="post">
-    Title<input type="text">
-    URL<input type="text">
+<form th:action="@{/add-post}" method="post">
+    <label for="title"> Enter post title</label>
+    <input autofocus id="title" type="text" name="title" >
+    <label for="url"> Enter your url</label>
+    <input id="url" type="url" name="url">
+    <button type="submit">Submit</button>
 </form>
 </body>
 </html>
