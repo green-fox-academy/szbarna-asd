@@ -11,4 +11,6 @@ public interface RedditService {
     List<Post> findAll();
 
     void save(Post post);
+
+    List<Post> findAllOrderByLikeCounterDesc();
 }

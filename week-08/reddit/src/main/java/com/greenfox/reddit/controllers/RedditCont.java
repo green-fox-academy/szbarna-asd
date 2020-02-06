@@ -20,7 +20,7 @@ public class RedditCont {
 
     @GetMapping({"/", "/posts"})
     public String listOfPosts(Model model) {
-        model.addAttribute("posts", redditService.findAll());
+        model.addAttribute("posts", redditService.findAllOrderByLikeCounterDesc());
         return "index";
     }
 

@@ -25,4 +25,9 @@ public class RedditServiceImpl implements RedditService{
     public void save(Post post) {
         redditRepo.save(post);
     }
+
+    @Override
+    public List<Post> findAllOrderByLikeCounterDesc() {
+        return (List<Post>) redditRepo.findAllOrderByLikeCounterDesc();
+    }
 }
