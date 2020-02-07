@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl implements UserService{
     UserRepo userRepo;
+    String uerName;
 
     @Autowired
     public UserServiceImpl(UserRepo userRepo) {
@@ -16,6 +17,11 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public void addUser(String name) {
-        userRepo.save(new User(name));
+        if (!userRepo.findByName(name).stream().findFirst().isPresent()) {
+            userRepo.save(new User(name));
+
+        } else {
+            userRepo.findByName(name);
+        }
     }
 }
