@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.jws.WebParam;
+
 @Controller
 public class UserContr {
     private UserService userService;
@@ -28,10 +30,9 @@ public class UserContr {
         userService.addUser(name);
         return "redirect:/posts?name=" + name; ///posts?name=" + name
     }
-
-   /* @GetMapping("/change/{id}/{number}")
-    public String changeCounter(@PathVariable Long id, @PathVariable("number") int number){
-        redditService.change(id, number);
-        return "redirect:/posts";
-    }*/
+    @GetMapping("/add-post-by-user")
+    public String postByUser(@RequestParam(value = "name",required = false) String name, Model model) {
+        model.addAttribute("name", name);
+        return "add-post";
+    }
 }

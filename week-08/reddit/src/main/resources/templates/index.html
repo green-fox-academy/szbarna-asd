@@ -5,7 +5,7 @@
     <title>Reddit</title>
 </head>
 <body>
-<a href="/add-post">Submit new post</a>
+<a th:href="@{/add-post-by-user(name=${})}">Submit new post</a>
 <h1>Trending Posts</h1>
 <table>
     <tr th:each="post : ${posts}" th:object="${post}">
