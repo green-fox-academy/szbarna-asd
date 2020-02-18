@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 public class Greet {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private String error;
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     private String welcome_message;
 
     public Greet(String name, String title) {
