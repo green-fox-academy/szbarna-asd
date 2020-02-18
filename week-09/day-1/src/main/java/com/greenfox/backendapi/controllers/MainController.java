@@ -57,15 +57,15 @@ public class MainController {
         } else {
             return ResponseEntity.ok().body(new DoItTill(action, until.getUntil()));
         }
+    }
 
-        /*if (until == null) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new DoItTill());
-        } else if (action.equals("sum")) {
-            return ResponseEntity.ok().body(new DoItTill(until));
-        } else if (action.equals("factor")){
-            return ResponseEntity.ok().body(new DoItTill(until,null));
+    @PostMapping("/arrays")
+    public ResponseEntity<ArrayInAction> arrayActions(@RequestBody(required = false) ArrayAction arrayAction) {
+
+        if (arrayAction.getWhat() == null || arrayAction.getNumbers() == null) {
+            return ResponseEntity.badRequest().body(new ArrayInAction(null, null));
         } else {
-            return null;
-        }*/
+            return ResponseEntity.ok().body(new ArrayInAction(arrayAction.getWhat(), arrayAction.getNumbers()));
+        }
     }
 }
