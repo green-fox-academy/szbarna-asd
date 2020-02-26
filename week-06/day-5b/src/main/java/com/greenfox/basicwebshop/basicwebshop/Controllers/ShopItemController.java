@@ -24,7 +24,7 @@ public class ShopItemController {
         shopItemList.add(new ShopItem("ChocoPenis", "Eatable chocolate penis. UNISEX", 1000, 31, ProductType.FOOD));
     }
 
-    @GetMapping("/webshop")
+    @GetMapping({"/webshop", "/"})
     public String accountList(Model model) {
         model.addAttribute("itemList", shopItemList);
         model.addAttribute("text", "Items");

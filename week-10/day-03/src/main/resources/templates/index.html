@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Green Fox Takeout</title>
+</head>
+<body>
+    <h1>Welcome to Green Fox Takeout!</h1>
+    <h2>Please enter your info and choose your mail</h2>
+    <form>
+        <label >Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label >Address:</label><br>
+        <input type="text" id="address" name="name">
+    </form>
+    <p>Bases</p>
+    <form>
+        <input type="radio" id="eggnoodle">
+        <label for="eggnoodle">Egg noodles</label><br>
+        <input type="radio" id="ricenoodle">
+        <label for="ricenoodle">Rice noodles</label><br>
+        <input type="radio" id="whiterice">
+        <label for="whiterice">White rice</label>
+    </form>
+    <p></p>
+    <label for="top">Toppings</label>
+    <p></p>
+    <select id="top">
+        <option value="chicken">Chicken</option>
+        <option value="beef">Beef</option>
+        <option value="tofu">Smoked tofu</option>
+    </select>
+    <form action="/order">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

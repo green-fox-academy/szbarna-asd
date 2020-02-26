@@ -23,7 +23,7 @@ public class RedditContr {
     public String listOfPosts(Model model/*, @RequestParam String name*/, String name) {
         model.addAttribute("posts", redditService.findAllOrderByLikeCounterDescFirstTen());
         //model.addAttribute("name", name);
-        model.addAttribute("name", name)
+        model.addAttribute("name", name);
         return "index";
     }
 

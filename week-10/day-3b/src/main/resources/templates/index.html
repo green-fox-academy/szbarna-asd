@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Green Fox Takeout</title>
+</head>
+<body>
+<h1>Welcome to Green Fox Takeout!</h1>
+<h2>Please enter your info and choose your mail</h2>
+<form th:action="@{/order}" method="post" th:object="order">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" th:field="${order.name}">
+    <label for="address">Address:</label><br>
+    <input type="text" id="address" name="address">
+</form>
+<p>Bases</p>
+<form th:action="@{/order}" method="post">
+    <input type="radio" id="noodle">
+    <label >Egg noodles</label><br>
+    <input type="radio" id="ricenoodle">
+    <label for="ricenoodle">Rice noodles</label><br>
+    <input type="radio" id="whiterice">
+    <label for="whiterice">White rice</label>
+</form>
+<p></p>
+<label for="top">Toppings</label>
+<p></p>
+<select id="top">
+    <option value="chicken">Chicken</option>
+    <option value="beef">Beef</option>
+    <option value="tofu">Smoked tofu</option>
+</select>
+<form action="/order" method="post">
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
